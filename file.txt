@@ -1,0 +1,29 @@
+
+- create a VPC for IBM customers who are residing in USA - alexandria 
+- make sure that this network is having high availability 
+- IP range:192.168.0.0/16 
+- create 4 subnets: 2 public subnets and 2 private subnets 
+- Naming: public subnet-1, 250 IP's 
+private subnet-1, 250 IP's 
+public subnet-2, 250 IP's 
+private subnet-2, 250 IP's 
+- Manage the route tables accordingly 
+- Launch the following instances using Amazon Linux 2 
+- Launch a testing instance in subnet 1, assign the IP adddress as the following 192.168.0.99 
+- create a security group which allows all traffic from anywhere and apply it for the testing instance 
+- launch another instance in public subnet 1 and tag it as web-server-1 and apply defauly security group 
+- launch another instance in public subnet 2, and tag it as web-server-2 with default security group 
+
+- launch another instance in private subnet 1, and tag it as db-server-1 with default security group 
+- launch another instance in private subnet 2, and tag it as db-server-2 with default security group 
+- launch another instance in private subnet 2, and tag it as app-server-2 with default security group 
+
+- launch another instance in public subnet 1, and tag it as db-admin with default security group 
+
+- Firewall rules for the above servers: 
+- allow ssh from anywhere on all the web servers 
+- all the db servers should be accessable only from db-admin only on ssh 
+- allow HTTP from anywhere on all the web servers 
+- allow mysql traffic on db-server-2 only from web-server-2 
+- allow mysql traffic on db-server-1 only from app-server-2 
+- verify all the above rules on the testing server
